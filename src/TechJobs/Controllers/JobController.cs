@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using TechJobs.Data;
+using TechJobs.Models;
 using TechJobs.ViewModels;
 
 namespace TechJobs.Controllers
@@ -19,8 +21,21 @@ namespace TechJobs.Controllers
         public IActionResult Index(int id)
         {
             // TODO #1 - get the Job with the given ID and pass it into the view
+            Job jbi = jobData.Find(id);
+            JobViewModel jobViewModel = new JobViewModel()
+            {
+                Name = jbi.Name,
+                Employer = jbi.Employer,
+                Location = jbi.Location,
+                CoreCompetency = jbi.CoreCompetency,
+                PositionType = jbi.PositionType,
+                Id = id
+                
+            };
+            
 
-            return View();
+
+            return View(jobViewModel);
         }
 
         public IActionResult New()
