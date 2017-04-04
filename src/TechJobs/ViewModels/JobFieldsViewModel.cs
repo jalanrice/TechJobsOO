@@ -21,16 +21,16 @@ namespace TechJobs.ViewModels
         // View title
         //public string Title { get; set; } = "";
 
-        public JobFieldsViewModel()
+        public JobFieldsViewModel() : base()
         {
             // Populate the list of all columns
 
-            Columns = new List<JobFieldType>();
+            // Columns = new List<JobFieldType>();
 
-            foreach (JobFieldType enumVal in Enum.GetValues(typeof(JobFieldType)))
-            {
-                Columns.Add(enumVal);
-            }
+            //foreach (JobFieldType enumVal in Enum.GetValues(typeof(JobFieldType)))
+            //{
+            //    Columns.Add(enumVal);
+            //}
 
 
         }
